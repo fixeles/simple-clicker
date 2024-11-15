@@ -1,4 +1,3 @@
-using System.Threading;
 using Common;
 using Config;
 using Leopotam.EcsLite;
@@ -27,7 +26,7 @@ namespace ECS
                 .Add(new TapRewardSystem())
                 .Add(new InventoryDisplaySystem())
                 .Add(new AutoRewardProgressViewSystem()) //can disable progress view
-                .Add(new IncomePerTimeCalculationSystem(cancellationToken))
+                .Add(new IncomeBufferSystem(cancellationToken))
                 .Inject(new Inventory(), new RuntimeData(), sceneData, staticData)
                 .Init();
         }
